@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Google AI Studio 页面翻译",
+    "version": "3.7.8",
+    "description": "对 Google AI Studio 网站界面进行汉化，方便中文用户使用。",
+    "content_scripts": [
+        {
+            "matches": ["https://aistudio.google.com/*"],
+            "js": ["zh.js", "content.js"],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ]
+}
