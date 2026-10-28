@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google AI Studio 页面翻译</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="title">Google AI Studio 扩展</div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">扩展程序主题</div>
+            <div class="segmented" id="theme-segmented" role="tablist">
+                <button class="segment" data-value="light" role="tab">浅色</button>
+                <button class="segment" data-value="dark" role="tab">深色</button>
+                <button class="segment" data-value="system" role="tab">跟随系统</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">网站页面语言</div>
+            <div class="segmented" id="language-segmented" role="tablist">
+                <button class="segment" data-value="original" role="tab">显示原文</button>
+                <button class="segment segment-dropdown" id="lang-segment" role="tab">
+                    <span id="lang-label">简体中文</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="lang-dropdown">
+                <div class="dropdown-item" data-lang="zh-CN">简体中文</div>
+                <div class="dropdown-item" data-lang="zh-TW">繁體中文</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">悬浮窗</div>
+            <div class="toggle-row">
+                <span class="toggle-text">在页面上显示快捷悬浮窗</span>
+                <button class="switch" id="float-switch" role="switch" aria-checked="false">
+                    <span class="switch-thumb"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="section" id="float-action-section">
+            <div class="section-label">左键点击悬浮窗</div>
+            <div class="segmented" id="float-action-segmented" role="tablist">
+                <button class="segment" data-value="toggleLanguage" role="tab">切换语言</button>
+                <button class="segment" data-value="openSettings" role="tab">打开设置</button>
+            </div>
+            <div class="action-hint">右键点击悬浮窗执行另一项操作：左键为「切换语言」时右键打开设置；左键为「打开设置」时右键切换语言。</div>
+        </div>
+
+        <div class="footer">
+            <span class="hint">设置自动保存并立即生效</span>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

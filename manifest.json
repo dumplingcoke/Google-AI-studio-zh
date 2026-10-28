@@ -1,14 +1,27 @@
 {
     "manifest_version": 3,
     "name": "Google AI Studio 页面翻译",
-    "version": "3.7.8",
-    "description": "对 Google AI Studio 网站界面进行汉化，方便中文用户使用。",
+    "version": "3.12.0",
+    "description": "对 Google AI Studio 网站界面进行汉化，弹窗支持主题切换，页面支持简体/繁体语言切换与快捷悬浮窗。",
+    "action": {
+        "default_title": "Google AI Studio 页面翻译",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage"
+    ],
     "content_scripts": [
         {
             "matches": ["https://aistudio.google.com/*"],
-            "js": ["zh.js", "content.js"],
+            "js": ["zh-traditional.js", "zh.js", "content.js"],
             "run_at": "document_start",
             "all_frames": true
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["popup.html", "popup.css", "popup.js"],
+            "matches": ["https://aistudio.google.com/*"]
         }
     ]
 }

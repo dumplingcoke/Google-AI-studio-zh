@@ -5,11 +5,28 @@
 
     const translations = {
         // --- 应用界面新增 ---
-		"": "",
-		"": "",
-		"": "",
-		"": "",
-		"": "",
+		"Interactive 3D fur physics and hair shading simulation for a stylized creature across studio, nature, and live AR camera environments.": "针对风格化生物的交互式3D毛发物理效果与毛发着色模拟，适用于摄影棚、自然环境以及实时AR摄像等多种场景",
+		"Audio Storybook Generator - Managed Agent": "有声故事书生成器 - 托管智能体",
+		"Miniature desk coaster time-trial racing game in Three.js": "基于 Three.js 的桌面微型杯垫计时竞速游戏",
+		"Interactive 3D Gothic Cathedral Wizard Chess with sculpted stone pieces, cinematic melee captures, stone shatter physics, and single-player AI.": "一款交互式3D哥特大教堂主题“国际象棋”游戏，包含雕刻石质棋子、电影感近战吃子动作、石块破碎物理效果，以及单人AI对战模式",
+		"Explore apps built with Gemini 4 Argon": "探索使用 Gemini 4 Argon 构建的应用",
+		"Google Meet": "Google 会议",
+		"Google Keep": "Google 笔记",
+		"Google Forms": "Google 表单",
+		"Google Chat": "Google 聊天",
+		"Google Tasks": "Google 待办",
+		"Google Slides": "Google 幻灯片",
+		"Google Docs": "Google 文档",
+		"Google Maps": "Google 地图",
+		"Nano Banana": "纳米香蕉",
+		"Managed Agents": "托管智能体",
+		"Build with Gemini 4 Argon": "使用 Gemini 4 Argon 构建",
+		"3D arcade tennis game with frantic racket kinematics, expressive Mii characters, webcam & phone motion controls, and Lyria 3 audio.": "一款3D街机风格网球游戏，具备激烈的击球动态表现、生动传神的Mii角色、支持网络摄像头及手机体感操控，并搭载Lyria 3音频系统",
+		"Argon Tennis": "街机网球",
+		"3D GPU Fur Simulation": "3D GPU 毛发模拟",
+		"Wizard Chess 3D": "3D 国际象棋",
+		"Identified": "已识别",
+		"Network error, try again.": "网络错误，请重试",
 		"Our previous-generation Pro model for complex reasoning, multimodal understanding, and general coding tasks.": "我们上一代 Pro 模型，适用于复杂推理、多模态理解及通用编程任务。",
 		"Gemini 4 Argon is here": "Gemini 4 Argon 现已登场",
 		"Argon helps bring your ideas to life. Whether you're analyzing a complex report, creating a deck from scattered resources, or building an interactive 3D experience.": "Argon 助力您将构想变为现实。无论是分析复杂的报告、利用零散的资源制作演示文稿，还是构建交互式 3D 体验，Argon 都能助您一臂之力",
@@ -781,9 +798,9 @@
         ".": "的子集。",
         "How can I use GitHub with my apps?": "如何在我的应用中使用 GitHub？",
         "AI Studio's GitHub integration allows you to create a repository for your work and commit your latest changes. We do not currently support pulling remote changes.": "AI Studio 的 GitHub 集成允许您为您的工作创建一个存储库并提交您的最新更改。我们目前不支持拉取远程更改。",
-        "What terms apply to apps in the app gallery in AI Studio?": "AI Studio 应用图库中的应用适用什么条款？",
+        "What terms apply to apps in the app gallery in AI Studio?": "AI Studio 创意画廊中的应用适用什么条款？",
         "Gemini API Additional Terms of Service": "Gemini API 附加服务条款",
-        "apply to use of apps featured in the app gallery in AI Studio, unless otherwise noted.": "适用于使用 AI Studio 应用图库中的应用，除非另有说明。",
+        "apply to use of apps featured in the app gallery in AI Studio, unless otherwise noted.": "适用于使用 AI Studio 创意画廊中的应用，除非另有说明。",
 
         // --- 旧有内容保留 ---
         "OK, got it": "好的，知道了",
@@ -833,7 +850,7 @@
         "Recently viewed": "最近查看",
         "Supercharge your apps with AI": "用 AI 为您的应用增效",
         "Discover and remix app ideas": "发现并重组应用创意",
-        "Browse the app gallery": "浏览应用图库",
+        "Browse the app gallery": "浏览创意画廊",
         "I'm feeling lucky": "手气不错",
         "Build your ideas with Gemini": "用 Gemini 构建您的创意",
         "Gemini 3.1 Pro comes with a new experience": "Gemini 3.1 Pro 带来全新体验",
@@ -2155,11 +2172,6 @@
         "Go to library": "前往资料库",
         "Build an Android app": "构建 Android 应用",
         "Contacts": "通讯录",
-        "Google Tasks": "Google Tasks",
-        "Google Chat": "Google Chat",
-        "Google Forms": "Google Forms",
-        "Google Keep": "Google Keep",
-        "Google Meet": "Google Meet"
     });
 
     const defaultValueTranslations = new Map([

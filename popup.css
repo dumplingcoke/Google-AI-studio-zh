@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 320px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #ffffff;
+    color: #1f1f1f;
+    color-scheme: light;
+    overflow: hidden;
+}
+
+/* 让 body 背景填满整个视口（页面内设置弹窗的 iframe 高度固定时不留白） */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+.app {
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ececec;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f1f1f;
+    letter-spacing: 0.2px;
+}
+
+.section {
+    margin-top: 18px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+/* 分段控件 */
+.segmented {
+    display: flex;
+    background: #f1f3f4;
+    border-radius: 10px;
+    padding: 3px;
+    gap: 2px;
+    user-select: none;
+}
+
+.segment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5f6368;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.segment:hover:not(.active) {
+    color: #1f1f1f;
+}
+
+.segment.active {
+    background: #ffffff;
+    color: #1a73e8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.06);
+    font-weight: 600;
+}
+
+/* 语言下拉分段按钮 */
+.segment-dropdown {
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    margin-left: 2px;
+    transition: transform 0.2s ease;
+}
+
+.segment-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* 下拉菜单位于分段控件下方，占据整行宽度；
+   处于文档流中，展开时弹窗自动增高，不会被 overflow:hidden 裁剪 */
+.dropdown-menu {
+    margin-top: 8px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    display: none;
+}
+
+.dropdown-menu.open {
+    display: block;
+    animation: dropdownIn 0.18s ease;
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #1f1f1f;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.dropdown-item:hover {
+    background: #f1f3f4;
+}
+
+.dropdown-item.selected {
+    background: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+.dropdown-item.selected::after {
+    content: "✓";
+    float: right;
+    color: #1a73e8;
+}
+
+/* 开关行 */
+.toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.toggle-text {
+    font-size: 13px;
+    color: #3c4043;
+    line-height: 1.4;
+}
+
+/* iOS 风格开关 */
+.switch {
+    position: relative;
+    flex: none;
+    width: 42px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: #bdc1c6;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.switch-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.switch[aria-checked="true"] {
+    background: #1a73e8;
+}
+
+.switch[aria-checked="true"] .switch-thumb {
+    transform: translateX(18px);
+}
+
+/* 被禁用的设置区（悬浮窗关闭时，点击行为设置不可用） */
+.section.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* 右键操作说明 */
+.action-hint {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #9aa0a6;
+}
+
+.footer {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #ececec;
+    text-align: center;
+}
+
+.hint {
+    font-size: 11px;
+    color: #9aa0a6;
+}
+
+/* ============ 深色模式 ============ */
+/* 由 popup.js 根据「浅色/深色/跟随系统」解析后在 <html> 上切换 .dark */
+html.dark {
+    color-scheme: dark;
+}
+
+html.dark body {
+    background: #202124;
+    color: #e8eaed;
+}
+
+html.dark .header {
+    border-bottom-color: #3c4043;
+}
+
+html.dark .title {
+    color: #e8eaed;
+}
+
+html.dark .section-label {
+    color: #9aa0a6;
+}
+
+html.dark .segmented {
+    background: #3c4043;
+}
+
+html.dark .segment {
+    color: #bdc1c6;
+}
+
+html.dark .segment:hover:not(.active) {
+    color: #e8eaed;
+}
+
+html.dark .segment.active {
+    background: #202124;
+    color: #8ab4f8;
+}
+
+html.dark .dropdown-menu {
+    background: #292a2d;
+    border-color: #5f6368;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .dropdown-item {
+    color: #e8eaed;
+}
+
+html.dark .dropdown-item:hover {
+    background: #3c4043;
+}
+
+html.dark .dropdown-item.selected {
+    background: #1a3a5c;
+    color: #8ab4f8;
+}
+
+html.dark .dropdown-item.selected::after {
+    color: #8ab4f8;
+}
+
+html.dark .toggle-text {
+    color: #bdc1c6;
+}
+
+html.dark .switch {
+    background: #5f6368;
+}
+
+html.dark .switch[aria-checked="true"] {
+    background: #8ab4f8;
+}
+
+html.dark .switch[aria-checked="true"] .switch-thumb {
+    background: #202124;
+}
+
+html.dark .footer {
+    border-top-color: #3c4043;
+}
+
+html.dark .hint {
+    color: #80868b;
+}
+
+html.dark .action-hint {
+    color: #80868b;
+}
